@@ -20,7 +20,7 @@ Ten skrypt automatyzuje proces instalacji i konfiguracji podstawowych narzędzi 
 ## Instalacja
 1. Pobierz skrypt:
 ```bash
-git clone https://github.com/[username]/security-install-script.git
+git clone https://github.com/0273574/security-install-script.git
 cd security-install-script
 ```
 
