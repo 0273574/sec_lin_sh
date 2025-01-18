@@ -132,6 +132,7 @@ read -p "$(echo -e "${YELLOW}Czy chcesz skonfigurować uwierzytelnianie kluczami
 if [[ ! "$use_keys" =~ ^[Nn]$ ]]; then
     read -p "$(echo -e "${YELLOW}Czy wygenerować nowe klucze SSH? [T/n]: ${NC}")" generate_keys
     if [[ ! "$generate_keys" =~ ^[Nn]$ ]]; then
+        pass_auth=yes
         read -p "$(echo -e "${BLUE}Podaj nazwę użytkownika, dla którego wygenerować klucze: ${NC}")" username
         if id "$username" &>/dev/null; then
             configure_ssh_keys "$username"
@@ -139,6 +140,7 @@ if [[ ! "$use_keys" =~ ^[Nn]$ ]]; then
             print_error "Użytkownik $username nie istnieje"
             exit 1
         fi
+    pass_auth=no
     fi
 fi
 
@@ -147,7 +149,7 @@ cat << EOF > /etc/ssh/sshd_config
 # Konfiguracja SSH wygenerowana przez skrypt bezpieczeństwa
 Port $ssh_port
 PermitRootLogin no
-PasswordAuthentication no
+PasswordAuthentication $pass_auth
 PubkeyAuthentication yes
 MaxAuthTries 3
 Protocol 2
