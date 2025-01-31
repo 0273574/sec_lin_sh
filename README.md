@@ -81,16 +81,3 @@ sestatus
 
 4. **WAŻNE**: Wymagane jest ponowne uruchomienie systemu po instalacji
 
-## Wkład i rozwój
-- Pull requesty są mile widziane
-- Prosimy o zgłaszanie błędów poprzez system Issues na GitHubie
-- Przy wprowadzaniu zmian, prosimy o przestrzeganie istniejącego stylu kodu
-
-## Licencja
-Ten projekt jest dostępny na licencji MIT. Zobacz plik `LICENSE` dla szczegółów.
-
-## Autor
-iletymaszlat
-
-## Podziękowania
-Podziękowania dla społeczności open source za narzędzia wykorzystane w tym projekcie.
